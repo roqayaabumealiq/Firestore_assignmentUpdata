@@ -3,6 +3,7 @@ package com.example.firestore_assignment;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,12 @@ public class CustomAdapter extends RecyclerView.Adapter<ViewHolder> {
                             String title = modleList.get(position).getTitle();
                             String description = modleList.get(position).getDescription();
 
+                            Intent intent = new Intent(listActivity,MainActivity.class);
+                            intent.putExtra("pId",id);
+                            intent.putExtra("pTitle",title);
+                            intent.putExtra("pDescription",description);
+
+                            listActivity.startActivity(intent);
 
                         }
                         if (i == 1){
